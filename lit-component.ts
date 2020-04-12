@@ -6,6 +6,7 @@ interface ComponentConfig<T> {
 }
 
 export class LitComponent<T> {
+  state: T;
   setState(state: T) { }
 }
 
