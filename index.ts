@@ -1,9 +1,7 @@
-import { of } from 'rxjs'; 
-import { map } from 'rxjs/operators';
+import './tailwind.min.css';
+import { MapMutateApp } from './map-to-mutate';
 
 
-const source = of('World').pipe(
-  map(x => `Hello ${x}!`)
+new MapMutateApp(
+  document.querySelector('#map-mutate')
 );
-
-source.subscribe(x => console.log(x));
