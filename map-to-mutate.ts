@@ -4,27 +4,23 @@ import { of, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from './types';
 
-export class MapMutateApp {
+import { Component, LitComponent } from './lit-component';
+
+@Component<any>({
+  template: state => `<h2>hai</h2>`,
+  selector: '#map-mutate'
+})
+export class MapMutate extends LitComponent<any> {
 
   user$: Observable<User>;
 
-  constructor(private root: HTMLElement) {
+  constructor() {
+    super();
+
     this.user$ = of({ 
       userId: 'HJKEg8h3812sjdiAEhopw',
       username: 'davideast',
     });
-  }
-
-  template() {
-    return html`
-    <div>
-      <h1>Hai</h1>
-    </div>
-    `;
-  }
-
-  render() {
-    render(this.template(), this.root);
   }
 
   onNewTask(taskName: string) {
